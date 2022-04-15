@@ -1,13 +1,19 @@
 const express = require('express');
+const cors = require('cors');
+
 const app = express();
 const port = 3000;
 
 //vue.js workshop backend
+app.use(cors({//granularily selects who can query the website
+
+  origin:'*' //this is not secure! to be secure, you can use localhost:8080(but not practical when deploying in the future(?))
+}))
 
 app.get('/movies', (req, res) => {
   res.json([
     {
-        Title: "Spiderman",
+        Title: "Spiderman 2",
         Subtitle:"When Peter asks for help from Doctor Strange, the stakes become even more dangerous, forcing him to discover what it truly means to be Spider-Man."
       },
       {
