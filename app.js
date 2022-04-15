@@ -40,7 +40,6 @@ app.get('/movies', (req, res) => {
 app.delete("/movies/:id",(req,res)=>{
   const id=req.params.id;
   movies=movies.filter(movie => movie.id != id)
-  res.send("DELETE successful for:",id);
   res.json({ack:true});//an attribute just to return the status of smthg
 })
 
